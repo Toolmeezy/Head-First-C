@@ -1,0 +1,36 @@
+#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
+
+// this is my print in reverse function
+void print_reverse(char *s) {
+    size_t len = strlen(s);
+    char *t = len + s - 1;
+    while (t >= s) {
+        printf("%c", t);
+        t = t - 1;
+    }
+}
+
+int main ()
+{
+    char *juices = {
+        "dragonfruit", "waterberry", "sharonfruit", "uglifruit",
+        "rumberry", "kiwifruit", "mailberry", "strawberry",
+        "blueberry", "blackberry", "starfruit"
+    };
+    char *a;
+    puts(juices[6]);
+    print_reverse(juices[7]);
+    a = juices[2];
+    juices[2] = juices[8];
+    juices [8] = a;
+    puts(juices[8]);
+    print_reverse(juices[(18 + 7) / 5]);
+    puts(juices[2]);
+    print_reverse(juices[9]);
+    juices[1] = juices[3];
+    puts(juices[10]);
+    print_reverse(juices[1]);
+    return 0;
+}
